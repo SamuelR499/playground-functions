@@ -1,22 +1,39 @@
 // Desafio 1
-function compareTrue() {
+function compareTrue(a, b) {
   // seu código aqui
-  // bora arrasar!!
-}
+    if(a === true && b === true){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  // console.log(compareTrue(true, true));
+
 
 // Desafio 2
-function calcArea() {
+function calcArea(base, height) {
   // seu código aqui
+  let trianguloArea = (base * height) / 2;
+  return trianguloArea;
 }
+  // console.log(calcArea(51, 1));
+
 
 // Desafio 3
-function splitSentence() {
+function splitSentence(string) {
   // seu código aqui
-}
+  let arraySplitString = string.split("\ ");
+    return arraySplitString;
+};
+  // console.log(splitSentence("go Trybe"));
+  // console.log(splitSentence("vamo que vamo"));
+  // console.log(splitSentence("foguete"));
+
 
 // Desafio 4
-function concatName() {
+function concatName(stringArray) {
   // seu código aqui
+
 }
 
 // Desafio 5

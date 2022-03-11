@@ -1,7 +1,7 @@
 // Desafio 1
 function compareTrue(a, b) {
   // seu código aqui
-  if ( a===true && b === true){
+  if (a === true && b === true) {
     return true;
   } else {
     return false;
@@ -39,35 +39,69 @@ function concatName(stringArray) {
 // Desafio 5
 function footballPoints(wins, ties) {
   // seu código aqui
-  let vitoria = wins *3;
+  let vitoria = wins * 3;
   let empate = ties;
   let soma = vitoria + empate;
-  return  soma;
+  return soma;
 }
 
 // Desafio 6
 function highestCount(numero) {
   // seu código aqui
-  
+
   let maior = Math.max.apply(null, numero);
   let contador = 0;
-  for(i in numero){
-    if(maior === numero[i]){
-      contador += 1 
+  for (i in numero) {
+    if (maior === numero[i]) {
+      contador += 1
     }
   }
-    return contador;
+  return contador;
 }
- 
+
 // Desafio 7
-function catAndMouse() {
+function catAndMouse(mouse, cat1, cat2) {
   // seu código aqui
+  let distanciaGato1 = Math.abs(cat1 - mouse)
+  let distanciaGato2 = Math.abs(cat2 - mouse)
+  let vencedor = "";
+
+  if (distanciaGato1 < distanciaGato2) {
+    vencedor = "cat1";
+  } else if (distanciaGato1 > distanciaGato2) {
+    vencedor = "cat2";
+  } else if (distanciaGato1 === distanciaGato2) {
+
+    vencedor = "os gatos trombam e o rato foge";
+  }
+  return vencedor;
 }
 
 // Desafio 8
-function fizzBuzz() {
+function fizzBuzz(arrayNumbers) {
   // seu código aqui
+
+  let arrayFizzBuzz = [];
+  for (i of arrayNumbers) {
+    if (i % 3 === 0 && i % 5 !== 0) {
+      arrayFizzBuzz.push("fizz");
+
+    } else if (i % 3 !== 0 && i % 5 === 0) {
+      arrayFizzBuzz.push("buzz");
+    } else if (i % 3 === 0 && i % 5 === 0) {
+      arrayFizzBuzz.push("fizzBuzz");
+    } else {
+      arrayFizzBuzz.push("bug!");
+    }
+  }
+  return arrayFizzBuzz;
 }
+
+console.log(fizzBuzz([2, 15, 7, 9, 45]));
+
+
+
+
 
 // Desafio 9
 function encode() {

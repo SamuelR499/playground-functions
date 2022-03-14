@@ -27,9 +27,10 @@ function concatName(stringArray) {
   // seu código aqui
   let lastItem = stringArray[stringArray.length - 1];
   let firstItem = stringArray[0];
-  let concat = lastItem - ', ' - firstItem;
+  let concat = lastItem + ', ' + firstItem;
   return concat;
 }
+  console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
 
 // Desafio 5
 function footballPoints(wins, ties) {

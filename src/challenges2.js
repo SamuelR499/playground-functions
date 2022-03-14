@@ -17,6 +17,4 @@ module.exports = {
   generatePhoneNumber,
   hydrate,
   triangleCheck,
-};
-//mudança para fazer o primeiro commit e o primeiro add.
-
+}

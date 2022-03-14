@@ -1,11 +1,11 @@
 // Desafio 1
 function compareTrue(a, b) {
   // seu código aqui
+  let resultado = false;
   if (a === true && b === true) {
-    return true;
-  } else {
-    return false;
+    resultado = true;
   }
+  return resultado;
 }
 
 // Desafio 2
@@ -14,28 +14,23 @@ function calcArea(base, height) {
   let trianguloArea = (base * height) / 2;
   return trianguloArea;
 }
-// console.log(calcArea(51, 1));
-
 
 // Desafio 3
 function splitSentence(string) {
   // seu código aqui
-  let arraySplitString = string.split("\ ");
+  let arraySplitString = string.split(' ');
   return arraySplitString;
-};
-// console.log(splitSentence("go Trybe"));
-// console.log(splitSentence("vamo que vamo"));
-// console.log(splitSentence("foguete"));
-
+}
 
 // Desafio 4
 function concatName(stringArray) {
   // seu código aqui
-  let lastItem = stringArray[stringArray.length - 1]
+  let lastItem = stringArray[stringArray.length - 1];
   let firstItem = stringArray[0];
-  let concat = lastItem + ", " + firstItem;
+  let concat = lastItem - ', ' - firstItem;
   return concat;
 }
+
 // Desafio 5
 function footballPoints(wins, ties) {
   // seu código aqui
@@ -51,9 +46,9 @@ function highestCount(numero) {
 
   let maior = Math.max.apply(null, numero);
   let contador = 0;
-  for (i in numero) {
+  for (let i in numero) {
     if (maior === numero[i]) {
-      contador += 1
+      contador += 1;
     }
   }
   return contador;
@@ -62,59 +57,107 @@ function highestCount(numero) {
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
   // seu código aqui
-  let distanciaGato1 = Math.abs(cat1 - mouse)
-  let distanciaGato2 = Math.abs(cat2 - mouse)
-  let vencedor = "";
+  let distanciaGato1 = Math.abs(cat1 - mouse);
+  let distanciaGato2 = Math.abs(cat2 - mouse);
+  let vencedor = '';
 
   if (distanciaGato1 < distanciaGato2) {
-    vencedor = "cat1";
+    vencedor = 'cat1';
   } else if (distanciaGato1 > distanciaGato2) {
-    vencedor = "cat2";
+    vencedor = 'cat2';
   } else if (distanciaGato1 === distanciaGato2) {
-
-    vencedor = "os gatos trombam e o rato foge";
+    vencedor = 'os gatos trombam e o rato foge';
   }
   return vencedor;
 }
 
 // Desafio 8
 function fizzBuzz(arrayNumbers) {
-  // seu código aqui
-
   let arrayFizzBuzz = [];
-  for (i of arrayNumbers) {
+  for (let i of arrayNumbers) {
     if (i % 3 === 0 && i % 5 !== 0) {
-      arrayFizzBuzz.push("fizz");
-
+      arrayFizzBuzz.push('fizz');
     } else if (i % 3 !== 0 && i % 5 === 0) {
-      arrayFizzBuzz.push("buzz");
+      arrayFizzBuzz.push('buzz');
     } else if (i % 3 === 0 && i % 5 === 0) {
-      arrayFizzBuzz.push("fizzBuzz");
+      arrayFizzBuzz.push('fizzBuzz');
     } else {
-      arrayFizzBuzz.push("bug!");
+      arrayFizzBuzz.push('bug!');
     }
   }
   return arrayFizzBuzz;
 }
 
-console.log(fizzBuzz([2, 15, 7, 9, 45]));
-
-
-
-
-
 // Desafio 9
-function encode() {
+function encode(codifica) {
   // seu código aqui
+  let newString = codifica.split('');
+  let arrayCod = [];
+  let stringCod = "";
+  for (i of newString) {
+    if (i === 'a') {
+      arrayCod.push('1');
+    } else if (i === 'e') {
+      arrayCod.push('2');
+    } else if (i === 'i') {
+      arrayCod.push('3');
+    } else if (i === 'o') {
+      arrayCod.push('4');
+    } else if (i === 'u') {
+      arrayCod.push('5');
+    } else {
+      arrayCod.push(i);
+    }
+  }
+  for (index of arrayCod) {
+    stringCod += index;
+  }
+
+  return stringCod;
 }
-function decode() {
-  // seu código aqui
+console.log(encode('hi there!'));
+
+function decode(decodifica) {
+  let stringSplit = decodifica.split('');
+  let arrayDecod = [];
+  let stringDecod = "";
+  for (i of stringSplit) {
+    if (i === '1') {
+      arrayDecod.push('a');
+    } else if (i === '2') {
+      arrayDecod.push('e');
+    } else if (i === '3') {
+      arrayDecod.push('i');
+    } else if (i === '4') {
+      arrayDecod.push('o');
+    } else if (i === '5') {
+      arrayDecod.push('u');
+    } else {
+      arrayDecod.push(i);
+    }
+  }
+  for (index of arrayDecod) {
+    stringDecod += index;
+  }
+  return stringDecod
 }
+console.log(decode('h3 th2r2!'));
 
 // Desafio 10
-function techList() {
+function techList(arrayTec, name) {
   // seu código aqui
-}
+  let newArray = [];
+  arrayTec.sort(); 
+    for (i of arrayTec) {
+      newArray.push({ tech: i, name: name })
+    }
+    if(arrayTec.length === 0){
+      return 'Vazio!';
+    }else{
+    return newArray;
+    }
+  }
+console.log(techList(["React", "Jest", "HTML", "CSS", "JavaScript"], 'Lucas'));
 
 module.exports = {
   calcArea,
@@ -128,4 +171,4 @@ module.exports = {
   highestCount,
   splitSentence,
   techList,
-};
+}
